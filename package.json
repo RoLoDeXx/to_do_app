@@ -1,0 +1,19 @@
+{
+  "name": "to_do_app",
+  "version": "1.0.0",
+  "description": "A simple to-do-app to implement CRUD operations using MongoDB.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": ""
+  },
+  "homepage": ""
+}
