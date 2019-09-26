@@ -1,10 +1,6 @@
-const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost:27017/my_todo_app',{useNewUrlParser: true},(error)=>{
-    if(!error)
-    {
-        console.log("MongoDB database connected successfully");
-    }
-    else{
-        console.log("MongoDB connection unsuccessfull");
-    }
-});
+const connection = require("./model");
+const express = require("expess");
+const path = require("path");
+const bodyparser = require("body-parser");
+const expressHandlebars = require("express-handlebars");
+const app = express();
