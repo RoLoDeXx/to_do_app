@@ -8,8 +8,18 @@ app.use(bodyparser.urlencoded({
     extended: true
 }));
 
+app.set('views',path.join(__dirname,"/views/"));
+
+app.engine("hbs",expressHandlebars({
+    extname: "hbs",
+    defaultLayout: "mainlayout",
+    layoutsDir: __dirname + "/views/layouts"
+}))
+
+app.set("view engine","hbs");
+
 app.get("/",(req,res)=>{
-    res.send("Root");
+    res.render("index.hbs",{});
 })
 
 app.listen("3000",()=>{
