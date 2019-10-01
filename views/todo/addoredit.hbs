@@ -1,11 +1,13 @@
-<form>
+<form action="/todo/add" autocomplete="off" method="POST">
+	<p class="h6" style="text-align: center;">{{viewTitle}}</p>
+
 	<div class="form-group">
-		<label for="tasktitle">Task Title</label>
+		<label for="tasktitle" class="h6">Task Title</label>
 		<input type="text" class="form-control" id="tasktitle" name="tasktitle">
 	</div>
 	<div class="form-group">
-		<label for="taskdescription">Task Description</label>
+		<label for="taskdescription" class="h6">Task Description</label>
 		<input type="text" class="form-control" name="taskdescription" title="taskdescription">
 	</div>
-	<button type="submit" class="btn btn-primary">Submit</button>
+	<button type="submit" class="btn btn-primary" style="display:block;margin:0 auto">Submit</button>
 </form>
