@@ -11,7 +11,9 @@ router.get('/',(req,res)=>{
 
 router.get('/list',(req,res)=>{
 	var x = todo.find({title: "homework"});
-	res.json(x);
+	console.log(x.title);
+	console.log(x.description);
+	console.log(typeof(x));
 })
 
 router.post('/add',(req,res)=>{
