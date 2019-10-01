@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost:27017/my_todo_app',{useNewUrlParser: true},(error)=>{
+mongoose.connect('mongodb://localhost:27017/todos_db',{useNewUrlParser: true, useUnifiedTopology: true},(error)=>{
     if(!error)
     {
         console.log("MongoDB database connected successfully");
@@ -8,4 +8,4 @@ mongoose.connect('mongodb://localhost:27017/my_todo_app',{useNewUrlParser: true}
         console.log("MongoDB connection unsuccessfull");
     }
 });
- const todos = require("./todo.model");
+require("./todo.model");
