@@ -4,20 +4,13 @@ const todo = mongoose.model('Todo');
 var router = express.Router();
 
 router.get('/',(req,res)=>{
-	if(!err)
-	{
-		res.render('todo/addoredit.hbs',{
-		viewTitle : "Insert Todo"
-		});
-	}
-	else{
-		console.log(err);
-	}
-	
+	res.render('todo/addoredit.hbs',{
+	viewTitle : "Insert Todo"
+	});
 })
 
 router.get('/list',(req,res)=>{
-	todo.find((err,docs)=>{
+	todo.find({},(err,docs)=>{
 		if(!err)
 		{
 			res.render('todo/list.hbs',{
@@ -46,4 +39,11 @@ router.post('/add',(req,res)=>{
 		}
 	});
 })
+
+router.get('/search',(req,res)=>{
+	res.render("todo/search.hbs",{
+		viewTitle: "Search Todo",
+	})
+})
+
 module.exports = router;
