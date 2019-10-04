@@ -46,4 +46,15 @@ router.get('/search',(req,res)=>{
 	})
 })
 
+router.post('/search/query',(req,res)=>{
+	var query = req.body.query;
+	console.log(query);
+	todo.find({"title": { $regex: new RegExp(query)}},(err,docs)=>{
+		res.render('todo/list.hbs',{
+			list: docs,
+			viewTitle: "Search Result"
+		})
+	})
+})
+
 module.exports = router;
