@@ -15,7 +15,8 @@ app.set("views",path.join(__dirname,'/views/'));
 app.engine("hbs",exphbs({
     extname: "hbs",
     defaultLayout: "mainLayout",
-    layoutsDir: __dirname + "/views/layouts/"
+    layoutsDir: __dirname + "/views/layouts/",
+    partialsDir: __dirname + "/views/partials/"
 }));
 
 app.use(bodyparser.urlencoded({
