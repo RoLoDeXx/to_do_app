@@ -5,6 +5,10 @@
 <ul class="list-group">
 	{{#each list}}
 	<li class="list-group-item">{{this.title}}</li>
-	<li class="list-group-item" style="margin-bottom:1rem;">{{this.description}}</li>
+	<li class="list-group-item">{{this.description}}</li>
+	<li class="list-group-item" style="margin-bottom:1rem;"><a href="/todo/delete/{{this._id}}">Delete</a></li>
+
+
+
 	{{/each}}
 </ul>

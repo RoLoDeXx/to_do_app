@@ -57,4 +57,16 @@ router.post('/search/query',(req,res)=>{
 	})
 })
 
+router.get('/delete/:id',(req,res)=>{
+	todo.findByIdAndRemove(req.params.id,(err,doc)=>{
+		if(!err)
+		{
+			res.redirect('/todo/list');
+		}
+		else{
+			console.log(err);
+		}
+	})
+})
+
 module.exports = router;
