@@ -35,18 +35,30 @@ router.get('/list',(req,res)=>{
 })
 
 router.post('/add',(req,res)=>{
-	var todovar = new todo();
-	todovar.title = req.body.tasktitle;
-	todovar.description = req.body.taskdescription;
-	todovar.save((err,doc)=>{
-		if(!err)
-		{
+	console.log(req.body._id);
+	if(req.body._id == '')
+	{
+		console.log("add");
+		console.log(req.body._id);
+		var todovar = new todo();
+		todovar.title = req.body.tasktitle;
+		todovar.description = req.body.taskdescription;
+		todovar.save((err,doc)=>{
+			if(!err)
+			{
+				res.redirect('/todo/list');
+			}
+			else{
+				console.log(err);
+			}
+		});
+	}
+	else{
+		console.log("update");
+		todo.findByIdAndUpdate(req.body._id,{title: req.body.tasktitle,description: req.body.taskdescription},(err,doc)=>{
 			res.redirect('/todo/list');
-		}
-		else{
-			console.log(err);
-		}
-	});
+		})
+	}
 })
 
 router.get('/search',(req,res)=>{
