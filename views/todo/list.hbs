@@ -6,9 +6,6 @@
 	{{#each list}}
 	<li class="list-group-item">{{this.title}}</li>
 	<li class="list-group-item">{{this.description}}</li>
-	<li class="list-group-item" style="margin-bottom:1rem;"><a href="/todo/delete/{{this._id}}">Delete</a></li>
-
-
-
+	<li class="list-group-item" style="margin-bottom:1rem;"><a href="/todo/delete/{{this._id}}" style="margin-right: 1rem;">Delete</a><a href="/todo/update/{{this._id}}">Update</a></li>
 	{{/each}}
 </ul>

@@ -2,14 +2,16 @@
 
 <form action="/todo/add" autocomplete="off" method="POST">
 	<p class="h6" style="text-align: center;">{{viewTitle}}</p>
-
+	<div class="form-group">
+		<input type="hidden" name="_id" value="{{todo._id}}"
+	</div>
 	<div class="form-group">
 		<label for="tasktitle" class="h6">Task Title</label>
-		<input type="text" class="form-control" id="tasktitle" name="tasktitle">
+		<input type="text" class="form-control" id="tasktitle" name="tasktitle" value={{todo.title}}>
 	</div>
 	<div class="form-group">
 		<label for="taskdescription" class="h6">Task Description</label>
-		<input type="text" class="form-control" name="taskdescription" title="taskdescription">
+		<input type="text" class="form-control" name="taskdescription" title="taskdescription" value={{todo.description}}>
 	</div>
 	<button type="submit" class="btn btn-primary" style="display:block;margin:0 auto">Submit</button>
 </form>

@@ -9,6 +9,15 @@ router.get('/',(req,res)=>{
 	});
 })
 
+router.get('/update/:id',(req,res)=>{
+	todo.findById(req.params.id,(err,doc)=>{
+		res.render('todo/addoredit.hbs',{
+			viewTitle: "Update Todo",
+			todo: doc
+		})
+	})
+})
+
 router.get('/list',(req,res)=>{
 	todo.find({},(err,docs)=>{
 		if(!err)
